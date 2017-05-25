@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.form {
+	width: 400px;
+	margin: 0px auto;
+	font-size: 85%;
+}
+</style>
+</head>
+<body>
+	<form action="/mvc/reg" method="post" class="form">
+		<table>
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" name="name"></td>
+
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td><input type="password" name="pwd2"></td>
+			</tr>
+			<tr>
+				<td>验证码：</td>
+				<td><input type="text" name="code">
+				<img id="ImgCode" src="/mvc/image">
+				<a href="javascript:_chg();">看不清换一张</a>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td colspan="2"><input type="submit" value="提交"> <a
+					href="javascript:window.history.go(-1);">返回</a></td>
+			</tr>
+		</table>
+	</form>
+	</body>
+<script type="text/javascript">
+  function _chg(){
+   var url="/mvc/image?"+Math.random();
+   var img = document.getElementById("ImgCode");
+   img.src=url;
+  }
+</script>
+</html>
