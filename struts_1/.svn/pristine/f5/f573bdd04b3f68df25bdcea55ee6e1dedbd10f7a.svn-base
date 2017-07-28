@@ -1,0 +1,31 @@
+package com.oracle.action;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UsersAction extends ActionSupport{
+
+	//主方法
+	public String execute() throws Exception {
+		//struts中获取request对象
+		HttpServletRequest request = ServletActionContext.getRequest();
+		
+		String t=request.getParameter("t");
+		
+		System.out.println("UsersAction.execute!!!");
+		if("1".equals(t)){
+			//返回成功
+			return "success";
+		}else {
+			//返回失败
+			return "abcd";
+		}
+		
+		
+		//return super.execute();
+	}
+	
+}

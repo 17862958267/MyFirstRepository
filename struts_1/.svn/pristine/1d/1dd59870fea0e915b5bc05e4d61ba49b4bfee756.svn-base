@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+	<!-- 启用开发模式,打印更多的异常信息 -->
+	<constant name="struts.devMode" value="true" /> 
+
+    <package name="users" namespace="/" extends="struts-default" >
+    	
+    	<action name="add" class="com.oracle.action.UsersAction" method="execute">
+    		<!-- 如果result不设置name属性,那么其值默认为success -->
+    		<result>success.jsp</result>
+    		<result name="abcd">failure.jsp</result>
+    	</action>
+    	
+    	
+    </package>
+
+</struts>

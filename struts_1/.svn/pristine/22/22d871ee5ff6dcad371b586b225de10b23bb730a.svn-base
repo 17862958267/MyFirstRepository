@@ -1,0 +1,159 @@
+package com.oracle.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.oracle.entity.Users;
+
+public class UsersAction extends ActionSupport implements ModelDriven<Users>{
+	/*
+	private String t;
+	//reuqest.getParamater()
+	public void setT(String t){
+		this.t=t;
+	}
+	//request.setAttribute()
+	public String getT(){
+		return t;
+	}
+	
+	
+	//主方法
+	public String execute() throws Exception {
+		//struts中获取request对象
+		//HttpServletRequest request = ServletActionContext.getRequest();
+		
+		//String t=request.getParameter("t");
+		
+		System.out.println("UsersAction.execute!!!");
+		if("1".equals(t)){
+			//返回成功
+			return "success";
+		}else {
+			//返回失败
+			return "abcd";
+		}
+		//return super.execute();
+	}
+	*/
+	
+	
+	
+	/*
+	
+	private String name;
+	private String username;
+	private String password;
+	private int age;//struts可以自动收取参数并转换为需要的类型
+	private String tel;
+	 */
+	
+	
+	/*
+	private List<Users> list;
+	
+	private Users users;//域属性驱动
+	private Integer id;//属性驱动
+	 */
+	
+	
+	public String addPage(){
+		System.out.println("UserAction.addPage...........");
+		
+		return "success";
+	}
+	
+	public String add(){
+		System.out.println("UserAction.add...........");
+		
+		//users=new Users(name, username, password, age, tel);
+		
+		//通过调用模型驱动方法,获取封装好的模型
+		
+		System.out.println(users);
+		
+		
+		return "success";
+	}
+	
+	public String list(){
+		System.out.println("UserAction.list...........");
+		return SUCCESS;
+	}
+	
+	public String updatePage(){
+		System.out.println("UserAction.updatePage...........");
+		return SUCCESS;
+	}
+	public String update(){
+		System.out.println("UserAction.update...........");
+		return SUCCESS;
+	}
+	
+	public String delete(){
+		System.out.println("UserAction.delete...........");
+		return SUCCESS;
+	}
+	/*
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	 */
+	/*public Users getUsers() {
+		return users;
+	}
+
+	public void setUsers(Users users) {
+		this.users = users;
+	}*/
+
+	/*
+	 * 当前端页面表单不能使用域属性传输参数时,可以使用模型驱动来创建并自动参数化对象模型
+	 * */
+	Users users = null;
+	
+	public Users getModel() {
+		if(users==null){
+			users=new Users();
+		}
+		return users;
+	}
+	
+	
+}
+

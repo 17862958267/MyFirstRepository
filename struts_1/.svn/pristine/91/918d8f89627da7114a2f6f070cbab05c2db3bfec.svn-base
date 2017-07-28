@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+	<!-- 启用开发模式,打印更多的异常信息 -->
+	<constant name="struts.devMode" value="true" /> 
+
+    <package name="users" namespace="/" extends="struts-default" >
+    	<action name="addPage" class="com.oracle.action.UsersAction" method="addPage">
+    		<result>success.jsp</result>
+    	</action>
+    	
+    	<action name="add" class="com.oracle.action.UsersAction" method="add">
+    		<!-- 如果result不设置name属性,那么其值默认为success -->
+    		<result>success.jsp</result>
+    		<result name="abcd">failure.jsp</result>
+    	</action>
+    	
+    	<action name="delete" class="com.oracle.action.UsersAction" method="delete">
+    		<result>success.jsp</result>
+    	</action>
+    	<action name="list" class="com.oracle.action.UsersAction" method="list">
+    		<result>success.jsp</result>
+    	</action>
+    	<action name="updatePage" class="com.oracle.action.UsersAction" method="updatePage">
+    		<result>success.jsp</result>
+    	</action>
+    	<action name="update" class="com.oracle.action.UsersAction" method="update">
+    		<result>success.jsp</result>
+    	</action>
+    </package>
+
+</struts>

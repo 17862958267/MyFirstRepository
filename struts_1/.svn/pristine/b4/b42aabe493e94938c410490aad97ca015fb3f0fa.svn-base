@@ -1,0 +1,71 @@
+package com.oracle.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UsersAction extends ActionSupport{
+
+	private String t;
+	//reuqest.getParamater()
+	public void setT(String t){
+		this.t=t;
+	}
+	//request.setAttribute()
+	public String getT(){
+		return t;
+	}
+	
+	/*
+	//主方法
+	public String execute() throws Exception {
+		//struts中获取request对象
+		//HttpServletRequest request = ServletActionContext.getRequest();
+		
+		//String t=request.getParameter("t");
+		
+		System.out.println("UsersAction.execute!!!");
+		if("1".equals(t)){
+			//返回成功
+			return "success";
+		}else {
+			//返回失败
+			return "abcd";
+		}
+		//return super.execute();
+	}
+	*/
+	
+	
+	public String addPage(){
+		System.out.println("UserAction.addPage...........");
+		System.out.println(t);
+		
+		return "success";
+	}
+	
+	public String add(){
+		System.out.println("UserAction.add...........");
+		
+		return "success";
+	}
+	
+	public String list(){
+		System.out.println("UserAction.list...........");
+		return SUCCESS;
+	}
+	
+	public String updatePage(){
+		System.out.println("UserAction.updatePage...........");
+		return SUCCESS;
+	}
+	public String update(){
+		System.out.println("UserAction.update...........");
+		return SUCCESS;
+	}
+	
+	public String delete(){
+		System.out.println("UserAction.delete...........");
+		return SUCCESS;
+	}
+	
+}
+
